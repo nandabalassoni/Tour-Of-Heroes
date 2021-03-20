@@ -1,4 +1,5 @@
 <h2>My Heroes</h2>
+
 <ul class="heroes">
   <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
     <!--Quando o herói da linha atual é o mesmo que o selectedHero, o Angular adiciona a selectedclasse CSS. Quando os dois heróis são diferentes, Angular remove a classe.-->
@@ -7,15 +8,4 @@
   </li>
 </ul>
 
-
-<div *ngIf="selectedHero">
-  <h2>{{selectedHero.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{selectedHero.id}}</div>
-  <div>
-    <label>name:
-      <input [(ngModel)]="hero.name" placeholder="name" />
-      <!--[(ngModel)] é a sintaxe de ligação de dados bidirecional do Angular.-->
-    </label>
-  </div>
-
-</div>
+<app-hero-detail [hero]="selectedHero"></app-hero-detail> <!-- Vinculando com o componente heroes-details.html -->
