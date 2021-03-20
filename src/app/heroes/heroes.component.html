@@ -7,14 +7,14 @@
 </ul>
 
 
+<div *ngIf="selectedHero">
+  <h2>{{selectedHero.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{selectedHero.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="hero.name" placeholder="name" />
+      <!--[(ngModel)] é a sintaxe de ligação de dados bidirecional do Angular.-->
+    </label>
+  </div>
 
-<p> {{ hero }}</p>
-<h2>{{hero.name | uppercase}} Details</h2>
-<div><span>id: </span>{{hero.id}}</div>
-<div><span>name: </span>{{hero.name}}</div>
-<div>
-  <label>name:
-    <input [(ngModel)]="hero.name" placeholder="name" />
-    <!--[(ngModel)] é a sintaxe de ligação de dados bidirecional do Angular.-->
-  </label>
 </div>
