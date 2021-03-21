@@ -1,5 +1,13 @@
 <h1>{{title}}</h1>
-<app-heroes></app-heroes>
+
+<nav>
+  <a routerLink="/heroes">Heroes</a>
+</nav>
+
+<router-outlet></router-outlet>
+<!-- Você removeu <app-heroes>porque só exibirá o HeroesComponentquando o usuário navegar até ele.-->
+
+<!--app-heroes></app-heroes-->
 <!-- aqui a lista de herois é exibida. adicionei o selector de heroes.component, resultando na exibição da lista-->
 
 <app-messages></app-messages>
