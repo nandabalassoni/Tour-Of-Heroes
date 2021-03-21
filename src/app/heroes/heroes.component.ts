@@ -33,4 +33,19 @@ Quando o Angular cria um HeroesComponent, o sistema de injeção de dependência
   Em seguida, subscribepassa a matriz emitida para o retorno de chamada, que define a heroespropriedade do componente .
 Essa abordagem assíncrona funcionará quando as HeroServicesolicitações forem herdeiras do servidor.*/
 
+
+  add(name: string): void {
+    name = name.trim();
+    if (!name) { return; }
+    this.heroService.addHero({ name } as Hero)
+      .subscribe(hero => {
+        this.heroes.push(hero);
+      });
+  }
+
+  delete(hero: Hero): void {
+    this.heroes = this.heroes.filter(h => h !== hero);
+    this.heroService.deleteHero(hero).subscribe();
+  }
+
 }
