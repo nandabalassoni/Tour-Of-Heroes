@@ -44,4 +44,11 @@ O locationé um serviço Angular para interagir com o navegador. Você o usará 
     this.location.back();
   }
 
+  save(): void {
+    this.heroService.updateHero(this.hero)
+      .subscribe(() => this.goBack());
+  }
+
+  /* ersiste as mudanças de nome do herói usando o updateHero()método de serviço do herói e, em seguida, navega de volta para a visualização anterior. */
+
 }
