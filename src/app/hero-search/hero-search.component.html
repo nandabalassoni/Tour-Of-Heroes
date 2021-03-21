@@ -1,0 +1,18 @@
+<div id="search-component">
+  <h4>Hero Search</h4>
+
+  <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+  <!-- A $é uma convenção que indica que heroes$é um Observable, não um array.
+
+    Eles não podem fazer nada com um . Mas também há uma barra vertical ( ) seguido por , que identifica o de Angular .*ngForObservable|asyncAsyncPipe
+    
+    O se AsyncPipeinscreve em um Observableautomaticamente para que você não precise fazer isso na classe do componente.-->
+
+  <ul class="search-result">
+    <li *ngFor="let hero of heroes$ | async">
+      <a routerLink="/detail/{{hero.id}}">
+        {{hero.name}}
+      </a>
+    </li>
+  </ul>
+</div>
