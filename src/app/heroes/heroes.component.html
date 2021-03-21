@@ -1,11 +1,13 @@
 <h2>My Heroes</h2>
 
 <ul class="heroes">
-  <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
-    <!--Quando o herói da linha atual é o mesmo que o selectedHero, o Angular adiciona a selectedclasse CSS. Quando os dois heróis são diferentes, Angular remove a classe.-->
+  <li *ngFor="let hero of heroes">
     <!-- O *ngForé de Angular repetidor directiva. Ele repete o elemento do host para cada elemento em uma lista.-->
-    <span class="badge">{{hero.id}}</span> {{hero.name}}
+    <a routerLink="/detail/{{hero.id}}">
+      <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </a>
   </li>
 </ul>
 
-<app-hero-detail [hero]="selectedHero"></app-hero-detail> <!-- Vinculando com o componente heroes-details.html -->
+<!--app-hero-detail [hero]="selectedHero"></app-hero-detail-->
+<!-- Vinculando com o componente heroes-details.html -->
