@@ -11,9 +11,6 @@ import { HeroService } from '../hero.service';
 
 export class HeroesComponent implements OnInit {  //refatorando Hero e inicializando com id e name
 
-
-  selectedHero: Hero;
-
   heroes: Hero[];
 
   constructor(private heroService: HeroService) { }
@@ -26,11 +23,6 @@ Quando o Angular cria um HeroesComponent, o sistema de injeção de dependência
   ngOnInit() {
     this.getHeroes();
   }
-
-  onSelect(hero: Hero): void {
-    this.selectedHero = hero;
-  }
-
 
   getHeroes(): void {
     this.heroService.getHeroes()
